@@ -1,0 +1,32 @@
+{
+  "name": "autonomous-maze-robot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Autonomous Maze Solving and Mapping Robot simulation, visualization, and ESP32 hardware interface",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n \"server,web\" -c \"blue,cyan\" \"npm run dev:server\" \"npm run dev:web\"",
+    "dev:server": "npm run dev --workspace=@maze/server",
+    "dev:web": "npm run dev --workspace=@maze/web",
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "test:server": "npm run test --workspace=@maze/server",
+    "test:web": "npm run test --workspace=@maze/web"
+  },
+  "keywords": [
+    "robotics",
+    "maze-solving",
+    "simulation",
+    "pathfinding",
+    "bfs",
+    "esp32"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}
